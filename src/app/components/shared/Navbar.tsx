@@ -25,9 +25,11 @@ export default function Navbar() {
         Jobgenix!
       </div>
       <nav
-        className={`${sorafont.className} flex max-w-7xl justify-between mx-auto pt-6`}
+        className={`${sorafont.className} flex max-w-7xl justify-between items-center mx-auto pt-6`}
       >
-        <Image src={logo} height={120} width={150} alt="logo"></Image>
+        <div className="relative h-5 w-32 overflow-hidden">
+        <Image src={logo} fill alt="logo"></Image>
+        </div>
         <ul className="flex items-center gap-4">
           <li>Home</li>
           <li>About Us</li>
