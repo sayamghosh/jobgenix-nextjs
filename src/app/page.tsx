@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Jobcard from "./components/cards/jobcard";
 
 import { Sora } from "next/font/google";
 
@@ -37,6 +38,11 @@ export default function Page() {
             Learn.<span className="text-[#0073E6]">Slay.</span>Get Hired.
           </h1>
           <p className="text-center w-96 text-xs font-thin">A power-packed space designed to sharpen your skills, boost confidence, and make you job-ready. <span className="text-[#0073E6]">Pick a track</span> &#38; <span className="text-[#0073E6]">Start now!</span></p>
+        </div>
+        <div className="w-full flex gap-8 justify-center items-center pb-30">
+          <Jobcard />
+          <Jobcard />
+          <Jobcard />
         </div>
       </section>
     </div>
