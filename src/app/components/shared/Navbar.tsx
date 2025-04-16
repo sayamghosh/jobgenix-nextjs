@@ -17,10 +17,9 @@ const profile =
 
 export default function Navbar() {
   return (
-    <>
+    <div className="w-full fixed top-0 ">
       <div
-        className="bg-[#0073E6] text-[#FFFFFF] max-w-7xl text-center mx-auto rounded-bl-[90px] py-[1px] rounded-br-[90px]
- "
+        className={`${sorafont.className} bg-[#0073E6] text-[#FFFFFF] max-w-7xl text-center mx-auto rounded-bl-[90px] py-[1px] rounded-br-[90px] `}
       >
         🎉 Join 8000+ students & job seekers growing their careers with
         Jobgenix!
@@ -59,6 +58,6 @@ export default function Navbar() {
           ></Image>
         </div>
       </nav>
-    </>
+    </div>
   );
 }
