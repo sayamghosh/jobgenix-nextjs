@@ -17,7 +17,7 @@ const profile =
 
 export default function Navbar() {
   return (
-    <div className="w-full fixed top-0 ">
+    <div className="w-full fixed top-0 bg-white">
       <div
         className={`${sorafont.className} bg-[#0073E6] text-[#FFFFFF] max-w-7xl text-center mx-auto rounded-bl-[90px] py-[1px] rounded-br-[90px] `}
       >
@@ -25,7 +25,7 @@ export default function Navbar() {
         Jobgenix!
       </div>
       <nav
-        className={`${sorafont.className} flex max-w-7xl justify-between mx-auto py-6`}
+        className={`${sorafont.className} flex max-w-7xl justify-between mx-auto pt-6`}
       >
         <Image src={logo} height={120} width={150} alt="logo"></Image>
         <ul className="flex items-center gap-4">
