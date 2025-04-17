@@ -1,5 +1,5 @@
 import React from 'react'
-import LoginCard from '@/app/components/Modals/loginModal'
+import LoginCard from '@/components/Modals/loginModal'
 
 export default function Page() {
   return (

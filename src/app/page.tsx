@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Jobcard from "./components/cards/jobcard";
+import Jobcard from "../components/cards/jobcard";
 
 import { Sora } from "next/font/google";
 
