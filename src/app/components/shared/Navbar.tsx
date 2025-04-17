@@ -17,7 +17,7 @@ const profile =
 
 export default function Navbar() {
   return (
-    <div className="w-full fixed top-0 bg-white">
+    <div className="w-full fixed top-0 z-10 bg-white">
       <div
         className={`${sorafont.className} bg-[#0073E6] text-[#FFFFFF] max-w-7xl text-center mx-auto rounded-bl-[90px] py-[1px] rounded-br-[90px] `}
       >
