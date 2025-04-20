@@ -11,7 +11,7 @@ const sorafont = Sora({
 
 export default function ProfileCard() {
   return (
-    <div className=" w-[442px]">
+    <div className=" md:w-[442px]">
       <div
         className={`${sorafont.className} h-fit bg-white rounded-2xl p-6 text-center space-y-4 mt-25 shadow-[1px_1px_2px_0px_rgba(255,255,255,0.30)_inset,-1px_-1px_2px_0px_rgba(198,198,198,0.50)_inset,-4px_4px_8px_0px_rgba(198,198,198,0.20),4px_-4px_8px_0px_rgba(198,198,198,0.20),-4px_-4px_8px_0px_rgba(255,255,255,0.90),4px_4px_10px_0px_rgba(198,198,198,0.90)]`}
       >
@@ -106,7 +106,7 @@ export default function ProfileCard() {
       </div>
 
       {/* Refer Card  */}
-      <div className="flex w-[442px] flex-col mt-6 items-center gap-3 [background:var(--Neutrals-White,#FFF)] shadow-[1px_1px_2px_0px_rgba(255,255,255,0.30)_inset,-1px_-1px_2px_0px_rgba(198,198,198,0.50)_inset,-4px_4px_8px_0px_rgba(198,198,198,0.20),4px_-4px_8px_0px_rgba(198,198,198,0.20),-4px_-4px_8px_0px_rgba(255,255,255,0.90),4px_4px_10px_0px_rgba(198,198,198,0.90)] px-[66px] py-[20.5px] rounded-[15px]">
+      <div className="flex flex-col mt-6 items-center gap-3 [background:var(--Neutrals-White,#FFF)] shadow-[1px_1px_2px_0px_rgba(255,255,255,0.30)_inset,-1px_-1px_2px_0px_rgba(198,198,198,0.50)_inset,-4px_4px_8px_0px_rgba(198,198,198,0.20),4px_-4px_8px_0px_rgba(198,198,198,0.20),-4px_-4px_8px_0px_rgba(255,255,255,0.90),4px_4px_10px_0px_rgba(198,198,198,0.90)] px-[66px] py-[20.5px] rounded-[15px]">
         <h1 className="self-stretch text-[color:var(--Neutrals-Dark-Grey,#333)] text-center [font-family:Sora] text-2xl font-bold leading-[44px]">Refer your Friends</h1>
         <div className="flex gap-4">
         <Image src={"/brand/whatsapp.png"} height={900} width={900} alt='whatsapp' className='w-20' />  

@@ -21,7 +21,7 @@ export default function Activity() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-[646.999px] h-[164px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:w-[646.999px] md:h-[164px]">
           <div>
             <div className="relative mt-1 ">
               <label className="text-xs bg-white absolute left-3 -top-[7px] px-[2px] font-medium">
@@ -94,7 +94,7 @@ export default function Activity() {
         <h2 className="text-center text-[color:var(--Neutrals-Dark-Grey,#333)] [font-family:Sora] text-2xl font-normal leading-[var(--Display-Small-Line-Height,44px)] tracking-[var(--Display-Medium-Tracking,0px)]">
           CV/Resume Management
         </h2>
-        <div className="flex items-center justify-between bg-gray-100 rounded-xl p-3 text-sm">
+        <div className="md:flex items-center justify-between bg-gray-100 rounded-xl p-3 text-sm">
           <div className="flex items-center gap-2">
             <FileDown className="text-red-600" />
             <div className="flex flex-col gap-0 justify-center pl-2">
@@ -104,7 +104,7 @@ export default function Activity() {
               </span>
             </div>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-3 ml-10 md:ml-0">
             <button className="text-gray-700 hover:text-black flex items-center gap-1">
               <Eye size={16} /> Preview
             </button>
