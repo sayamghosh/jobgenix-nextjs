@@ -116,7 +116,7 @@ export default function Activity() {
       </div>
 
       {/* Learning Activity */}
-      <div className="bg-white rounded-2xl p-6 space-y-4 shadow-[1px_1px_2px_0px_rgba(255,255,255,0.30)_inset,-1px_-1px_2px_0px_rgba(198,198,198,0.50)_inset,-4px_4px_8px_0px_rgba(198,198,198,0.20),4px_-4px_8px_0px_rgba(198,198,198,0.20),-4px_-4px_8px_0px_rgba(255,255,255,0.90),4px_4px_10px_0px_rgba(198,198,198,0.90)]">
+      <div className="relative bg-white rounded-2xl p-6 space-y-4 shadow-[1px_1px_2px_0px_rgba(255,255,255,0.30)_inset,-1px_-1px_2px_0px_rgba(198,198,198,0.50)_inset,-4px_4px_8px_0px_rgba(198,198,198,0.20),4px_-4px_8px_0px_rgba(198,198,198,0.20),-4px_-4px_8px_0px_rgba(255,255,255,0.90),4px_4px_10px_0px_rgba(198,198,198,0.90)]">
         <h2 className="text-lg mx-auto w-fit font-semibold">
           Learning Activity
         </h2>
@@ -146,13 +146,14 @@ export default function Activity() {
             ))}
           </div>
 
-          {/* Activity Grid */}
-          <div className="relative grid grid-cols-52 gap-[2px] text-[0px] min-w-[800px] md:min-w-full pl-10">
-            {/* Selected Month */}
-            <div className="absolute right-0 -top-[60px] text-sm text-gray-600">
+          {/* Selected Month */}
+          <div className="absolute md:top-[40px] md:right-[30px] right-[10px] top-[50px] text-sm text-gray-600">
               2025 ▾ January
             </div>
 
+
+          {/* Activity Grid */}
+          <div className="relative grid grid-cols-52 gap-[2px] text-[0px] min-w-[800px] md:min-w-full pl-10">
             {/* Days of the Week */}
             <div className="absolute left-1 flex flex-col gap-3 items-center justify-center h-[60px]">
               {["Mon", "Wed", "Fri"].map((day, i) => (
