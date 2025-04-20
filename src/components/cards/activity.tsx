@@ -121,61 +121,61 @@ export default function Activity() {
           Learning Activity
         </h2>
 
-        {/* Month Labels */}
-        <div className="grid grid-cols-52 pl-8 mb-1">
-          {[
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec",
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-          ].map((month, i) => (
-            <div key={i} className="col-span-4 text-xs text-gray-500">
-              {month}
-            </div>
-          ))}
-        </div>
-
-        {/* <div className="flex w-full"> */}
-        {/* Activity Grid */}
-        <div className="relative grid grid-cols-52 gap-[2px] text-[0px] pl-6">
-
-          {/* months */}
-          <div className="absolute right-0 -top-[60px] text-sm text-gray-600">
-            2025 ▾ January
-          </div>
-
-          {/* days of week */}
-          <div className="absolute -left-3 flex flex-col gap-3 items-center justify-center mr-1 h-[60px]">
-            {["Mon", "Wed", "Fri"].map((day, i) => (
-              <div key={i} className="text-xs text-gray-500 h-[8px]">
-                {day}
+        {/* Horizontal Scroll Container */}
+        <div className="overflow-x-auto md:overflow-x-hidden">
+          {/* Month Labels */}
+          <div className="grid grid-cols-52 min-w-[800px] md:min-w-full pl-8 mb-1">
+            {[
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec",
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+            ].map((month, i) => (
+              <div key={i} className="col-span-4 text-xs text-gray-500">
+                {month}
               </div>
             ))}
           </div>
 
-          {/* Activity Cells */}
-          {Array.from({ length: 52 * 7 }).map((_, i) => {
-            const isFilled = [34, 67, 110, 222, 300].includes(i); // example filled cells
-            return (
-              <div
-                key={i}
-                className={`w-2 h-2 rounded-[2px]  border-[0.5px] ${
-                  isFilled ? "bg-blue-600" : "bg-white"
-                }`}
-              />
-            );
-          })}
+          {/* Activity Grid */}
+          <div className="relative grid grid-cols-52 gap-[2px] text-[0px] min-w-[800px] md:min-w-full pl-10">
+            {/* Selected Month */}
+            <div className="absolute right-0 -top-[60px] text-sm text-gray-600">
+              2025 ▾ January
+            </div>
+
+            {/* Days of the Week */}
+            <div className="absolute left-1 flex flex-col gap-3 items-center justify-center h-[60px]">
+              {["Mon", "Wed", "Fri"].map((day, i) => (
+                <div key={i} className="text-xs text-gray-500 h-[8px]">
+                  {day}
+                </div>
+              ))}
+            </div>
+
+            {/* Activity Cells */}
+            {Array.from({ length: 52 * 7 }).map((_, i) => {
+              const isFilled = [34, 67, 110, 222, 300].includes(i); // example filled cells
+              return (
+                <div
+                  key={i}
+                  className={`w-2 h-2 rounded-[2px] border-[0.5px] ${
+                    isFilled ? "bg-blue-600" : "bg-white"
+                  }`}
+                />
+              );
+            })}
+          </div>
         </div>
-        {/* </div> */}
       </div>
     </div>
   );
