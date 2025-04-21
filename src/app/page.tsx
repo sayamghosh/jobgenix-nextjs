@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Jobcard from "../components/cards/jobcard";
+import Image from "next/image";
 
 import { Sora } from "next/font/google";
 
@@ -11,9 +12,9 @@ const sorafont = Sora({
 
 export default function Page() {
   return (
-    <div>
+    <div className={`${sorafont.className}`}>
       <div
-        className={`${sorafont.className} w-full h-screen flex flex-col items-center justify-center `}
+        className={` relative w-full -z-10 h-screen flex flex-col items-center justify-center `}
       >
         <div className="flex flex-col items-center justify-center gap-2">
           <h1 className="text-[#333333] text-5xl font-bold">
@@ -31,8 +32,16 @@ export default function Page() {
             Start Your Journey Now
           </Link>
         </div>
+        <div className="vector absolute -bottom-[425px]">
+          <Image
+            src={"/grooming/bottomVector.png"}
+            height={900}
+            width={900}
+            alt="vector"
+          ></Image>
+        </div>
       </div>
-      <section className="w-full bg-[#021C2D]">
+      <section className="w-full z-10 bg-[#021C2D]">
         <div className="w-full flex  flex-col gap-3 items-center justify-center text-white py-10">
           <h1 className="text-3xl text-center font-semibold ">
             Learn.<span className="text-[#0073E6]">Slay.</span>Get Hired.
@@ -40,8 +49,8 @@ export default function Page() {
           <p className="text-center w-96 text-xs font-thin">
             A power-packed space designed to sharpen your skills, boost
             confidence, and make you job-ready.{" "}
-            <span className="text-[#0073E6]">Pick a track</span> &#38;{" "}
-            <span className="text-[#0073E6]">Start now!</span>
+            <span className="text-[#0073E6] font-semibold">Pick a track</span> &#38;{" "}
+            <span className="text-[#0073E6] font-semibold">Start now!</span>
           </p>
         </div>
         <div className="w-full flex gap-8 justify-center items-center pb-30">
@@ -51,46 +60,34 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="relative bg-[#021C2D] w-full overflow-hidden">
-        {/* White curved section */}
-        <div
-          className="relative z-10 w-full bg-white flex flex-col items-center justify-center px-4 pb-32 pt-24"
-          style={{
-            clipPath: "circle(130% at 50% 0)", // Play with size for perfect match
-          }}
-        >
-          <h1 className="text-4xl font-bold text-black">
-            job<span className="text-[#0073E6]">Genix</span>
+      <section className="py-20 gap-4 relative">
+        <Image src={"/graphic/leftCurvedArrow.png"} height={60} width={60} alt="vector" className="absolute left-[530px] top-[230px]" />
+        <div className="flex flex-col gap-1 w-fit mx-auto  items-center">
+          <h1 className="font-bold text-3xl text-[#333333] text-[56px]">
+            Your Future&apos; Calling
           </h1>
-          <p className="text-gray-600 mt-2">
-            Powering Dreams, One Career at a Time.
+          <h1 className="font-bold text-5xl text-[#333333] text-[56px]">
+            JobGenix Way!
+          </h1>
+          <p className="mt-2">
+            {" "}
+            <span className="text-[#0073E6]">Get matched.</span> Get mentored.{" "}
+            <span className="text-[#0073E6]">Get hired.</span>{" "}
           </p>
-          <button className="mt-6 px-6 py-3 bg-[#0073E6] text-white rounded-full shadow-md hover:bg-[#005bb5] transition">
-            Create Your Free Account & Start Today
-          </button>
         </div>
+        <Image src={"/graphic/rightCurvedArrow.png"} height={60} width={60} alt="vector" className="absolute right-[530px] top-[230px]" />
 
-        {/* Dark subscribe section */}
-        <div className="relative z-0 text-white text-center py-16 px-4">
-          <h2 className="text-2xl font-semibold mb-4">Subscribe</h2>
-          <p className="mb-6">Join our community to receive updates</p>
-          <form className="flex justify-center items-center gap-2 flex-wrap">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="px-4 py-2 rounded-full text-black w-64 focus:outline-none"
-            />
-            <button className="px-5 py-2 bg-[#0073E6] rounded-full hover:bg-[#005bb5] transition">
-              Subscribe
-            </button>
-          </form>
-          <p className="text-sm text-gray-400 mt-4">
-            By subscribing you agree to our Privacy Policy
-          </p>
-        </div>
+        <Link href={"/"} className="py-3 px-5 text-white rounded-full mx-auto mt-12 flex items-center w-fit bg-[#0073E6]  text-xs font-light">
+          Create Your Free Account & Start Today{" "}
+          <Image
+            src={"/graphic/arrow-right-circle.png"}
+            height={50}
+            width={50}
+            alt="arror"
+            className="h-8 w-8 ml-2"
+          ></Image>
+        </Link>
       </section>
-
-      <div className="w-full h-screen bg-[#021C2D]"></div>
     </div>
   );
 }
