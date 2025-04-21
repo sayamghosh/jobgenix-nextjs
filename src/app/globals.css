@@ -24,3 +24,16 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.rte ul{
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.rte strong {
+  font-weight: 700; /* Makes bold text appear bold */
+}
+
+.rte ul li{
+  margin-bottom: 0.5rem;
+}

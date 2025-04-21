@@ -1,96 +1,152 @@
-'use client';
-import React from 'react';
+"use client";
+import React from "react";
+import { Editor } from "@tiptap/react";
+import { HiMiniBold, HiMiniItalic, HiMiniStrikethrough } from "react-icons/hi2";
+import {
+  RiAlignLeft,
+  RiAlignRight,
+  RiAlignCenter,
+  RiAlignJustify,
+} from "react-icons/ri";
+import {
+  MdFormatListBulleted,
+  MdOutlineSuperscript,
+  MdSubscript,
+} from "react-icons/md";
+import { ImUnderline } from "react-icons/im";
 
-export default function MenuBar({ editor }: any) {
+interface MenuBarProps {
+  editor: Editor | null;
+}
+
+export default function MenuBar({ editor }: MenuBarProps) {
   if (!editor) {
     return null;
   }
   return (
-    <div className="control-group">
-      <div className="button-group">
-        <button
-          type="button"
-          onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-          className={editor.isActive('heading', { level: 1 }) ? 'is-active' : ''}
-        >
-          H1
-        </button>
-        <button
-          type="button"
-          onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-          className={editor.isActive('heading', { level: 2 }) ? 'is-active' : ''}
-        >
-          H2
-        </button>
-        <button
-          type="button"
-          onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-          className={editor.isActive('heading', { level: 3 }) ? 'is-active' : ''}
-        >
-          H3
-        </button>
-        <button
-          type="button"
-          onClick={() => editor.chain().focus().setParagraph().run()}
-          className={editor.isActive('paragraph') ? 'is-active' : ''}
-        >
-          Paragraph
-        </button>
+    <div className="control-group w-full border-b border-slate-200  p-2 flex justify-between items-center">
+      <div className="button-group flex gap-1">
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleBold().run()}
-          className={editor.isActive('bold') ? 'is-active' : ''}
+          className={
+            editor.isActive("bold")
+              ? "p-2 bg-slate-200 rounded-md text-[#0073E6]"
+              : "p-2 text-[#0073E6]"
+          }
         >
-          Bold
+          <HiMiniBold />
         </button>
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleItalic().run()}
-          className={editor.isActive('italic') ? 'is-active' : ''}
+          className={
+            editor.isActive("italic")
+              ? "p-2 bg-slate-200 rounded-md text-[#0073E6]"
+              : "p-2 text-[#0073E6]"
+          }
         >
-          Italic
+          <HiMiniItalic />
+        </button>
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().toggleUnderline().run()}
+          className={
+            editor.isActive("underline")
+              ? "p-2 bg-slate-200 rounded-md text-[#0073E6]"
+              : "p-2 text-[#0073E6]"
+          }
+        >
+          <ImUnderline />
         </button>
         <button
           type="button"
           onClick={() => editor.chain().focus().toggleStrike().run()}
-          className={editor.isActive('strike') ? 'is-active' : ''}
+          className={
+            editor.isActive("strike")
+              ? "p-2 bg-slate-200 rounded-md text-[#0073E6]"
+              : "p-2 text-[#0073E6]"
+          }
         >
-          Strike
+          <HiMiniStrikethrough />
+        </button>
+
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().setTextAlign("left").run()}
+          className={
+            editor.isActive({ textAlign: "left" })
+              ? "p-2 bg-slate-200 rounded-md text-[#0073E6]"
+              : "p-2 text-[#0073E6]"
+          }
+        >
+          <RiAlignLeft />
         </button>
         <button
           type="button"
-          onClick={() => editor.chain().focus().toggleHighlight().run()}
-          className={editor.isActive('highlight') ? 'is-active' : ''}
+          onClick={() => editor.chain().focus().setTextAlign("center").run()}
+          className={
+            editor.isActive({ textAlign: "center" })
+              ? "p-2 bg-slate-200 rounded-md text-[#0073E6]"
+              : "p-2 text-[#0073E6]"
+          }
         >
-          Highlight
+          <RiAlignCenter />
         </button>
         <button
           type="button"
-          onClick={() => editor.chain().focus().setTextAlign('left').run()}
-          className={editor.isActive({ textAlign: 'left' }) ? 'is-active' : ''}
+          onClick={() => editor.chain().focus().setTextAlign("right").run()}
+          className={
+            editor.isActive({ textAlign: "right" })
+              ? "p-2 bg-slate-200 rounded-md text-[#0073E6]"
+              : "p-2 text-[#0073E6]"
+          }
         >
-          Left
+          <RiAlignRight />
         </button>
         <button
           type="button"
-          onClick={() => editor.chain().focus().setTextAlign('center').run()}
-          className={editor.isActive({ textAlign: 'center' }) ? 'is-active' : ''}
+          onClick={() => editor.chain().focus().setTextAlign("justify").run()}
+          className={
+            editor.isActive({ textAlign: "justify" })
+              ? "p-2 bg-slate-200 rounded-md text-[#0073E6]"
+              : "p-2 text-[#0073E6]"
+          }
         >
-          Center
+          <RiAlignJustify />
         </button>
         <button
           type="button"
-          onClick={() => editor.chain().focus().setTextAlign('right').run()}
-          className={editor.isActive({ textAlign: 'right' }) ? 'is-active' : ''}
+          onClick={() => editor.chain().focus().toggleBulletList().run()}
+          className={`${
+            editor.isActive("bulletList")
+              ? "p-2 bg-slate-200 rounded-md "
+              : "p-2 "
+          }text-[#0073E6]`}
         >
-          Right
+          <MdFormatListBulleted />
         </button>
         <button
           type="button"
-          onClick={() => editor.chain().focus().setTextAlign('justify').run()}
-          className={editor.isActive({ textAlign: 'justify' }) ? 'is-active' : ''}
+          onClick={() => editor.chain().focus().toggleSuperscript().run()}
+          className={`${
+            editor.isActive("superscript")
+              ? "p-2 bg-slate-200 rounded-md "
+              : "p-2 "
+          }text-[#0073E6]`}
         >
-          Justify
+          <MdOutlineSuperscript />
+        </button>
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().toggleSubscript().run()}
+          className={`${
+            editor.isActive("subscript")
+              ? "p-2 bg-slate-200 rounded-md "
+              : "p-2 "
+          }text-[#0073E6]`}
+        >
+          <MdSubscript />
         </button>
       </div>
     </div>
