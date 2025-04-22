@@ -9,7 +9,7 @@ export default function Jobcard() {
   const imgurl =
     "https://s3-alpha-sig.figma.com/img/74e9/b231/724bca7dfbbf597d9c891c925b7eecd3?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=rFftIWrKcpkG7Z9IioKK6JoWl2NsLHw6YoY79st3RqYZpxOLLq70PjuvV2DuNBkvj95P6vNp46OCjCxXX1vGjjVMBH2kyWrAFTbnQSZHas85vxzvErLjEBzdui-ChslKV6GaqnisTFcMGUjclSEm5Z0zyzghrfllCo5K2Kg5dy0tTWcJBswCLzX~8w08xC6c9pV6n6QMSFYH37PZn-5YgX3IZWu1itoDIcMNnfzf0irWVHs8UklF1pFCd3VB4~TVZghS6s6Ek9fyJQonpEot0UlsA~NTSvJdqQYeM~6aCN1g5Mkc2fu29xaBhuDWNQr-l1Cad-vCQlKYC6Cuq6C9ww__";
   return (
-    <div className="w-3/12 bg-white rounded-3xl overflow-hidden">
+    <div className="w-full bg-white rounded-3xl overflow-hidden">
       <div className="h-32 w-full relative ">
         <Image src={imgurl} fill className="object-cover" alt="img"></Image>
       </div>

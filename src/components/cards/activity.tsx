@@ -21,9 +21,9 @@ export default function Activity() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:w-[646.999px] md:h-[164px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
           <div>
-            <div className="relative mt-1 ">
+            <div className="relative mt-1 w-full">
               <label className="text-xs bg-white absolute left-3 -top-[7px] px-[2px] font-medium">
                 Email Address
               </label>
@@ -39,7 +39,7 @@ export default function Activity() {
             </div>
           </div>
           <div>
-            <div className="relative mt-1">
+            <div className="relative mt-1 w-full">
               <label className="text-xs bg-white absolute left-3 -top-[7px] px-[2px] font-medium">
                 Phone Number
               </label>
@@ -55,7 +55,7 @@ export default function Activity() {
             </div>
           </div>
           <div>
-            <div className="relative mt-1">
+            <div className="relative mt-1 w-full">
               <label className="text-xs bg-white absolute left-3 -top-[7px] px-[2px] font-medium">
                 College/University
               </label>
@@ -71,7 +71,7 @@ export default function Activity() {
             </div>
           </div>
           <div>
-            <div className="relative mt-1">
+            <div className="relative mt-1 w-full">
               <label className="text-xs bg-white absolute left-3 -top-[7px] px-[2px] font-medium">
                 Location
               </label>

@@ -4,6 +4,7 @@ import { Pencil, Trash2, Eye, FileDown } from "lucide-react";
 import ProfileCard from "@/components/cards/profileCard";
 import Activity from "@/components/cards/activity";
 import Image from "next/image";
+import Link from "next/link";
 
 const sorafont = Sora({
   subsets: ["latin"],
@@ -17,9 +18,9 @@ export default function Page() {
       <ProfileCard />
       <Activity />
     </div>
-    <div className="w-full flex justify-center mt-16">
-      <Image src={"/images/refer.png"} height={900} width={900} alt='logo' className='object-cover w-full md:w-7xl' ></Image>
-    </div>
+    <Link href={"/"} className="w-full flex justify-center mt-16">
+      <Image src={"/images/refer.png"} height={1080} width={1080} alt='logo' className='object-cover w-full md:w-7xl' ></Image>
+    </Link>
     </>
   );
 }
