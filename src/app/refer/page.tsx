@@ -2,6 +2,7 @@
 import React from "react";
 import ReferCard from "@/components/cards/referCard";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Sora } from "next/font/google";
 
@@ -60,7 +61,7 @@ export default function Page() {
       </div>
 
       {/* Content Section */}
-      <div className="w-full flex flex-col items-center justify-center gap-8 mt-10">
+      <Link href={"/"} className="w-full flex flex-col items-center justify-center gap-8 mt-10">
         <ReferCard data={accordionData} />
         <ReferCard data={accordionData} />
         <Image
@@ -68,9 +69,9 @@ export default function Page() {
           height={500}
           width={500}
           alt="logo"
-          className="object-cover md:w-[40%]"
+          className="object-cover md:w-[80%]"
         />
-      </div>
+      </Link>
     </div>
   );
 }

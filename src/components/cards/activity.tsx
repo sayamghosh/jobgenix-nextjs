@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import { PencilLine, Trash2, Eye, FileDown } from "lucide-react";
 import { Sora } from "next/font/google";
+import { useState } from "react";
 
 const sorafont = Sora({
   subsets: ["latin"],
@@ -8,6 +10,9 @@ const sorafont = Sora({
 });
 
 export default function Activity() {
+  
+  const [isEditable, setIsEditable] = useState(false);
+
   return (
     <div
       className={`${sorafont.className} md:w-[735px] mx-auto p-4 space-y-8 mt-25`}
@@ -16,7 +21,7 @@ export default function Activity() {
       <div className="bg-white flex flex-col items-center gap-10  [background:var(--Neutrals-White,#FFF)] shadow-[1px_1px_2px_0px_rgba(255,255,255,0.30)_inset,-1px_-1px_2px_0px_rgba(198,198,198,0.50)_inset,-4px_4px_8px_0px_rgba(198,198,198,0.20),4px_-4px_8px_0px_rgba(198,198,198,0.20),-4px_-4px_8px_0px_rgba(255,255,255,0.90),4px_4px_10px_0px_rgba(198,198,198,0.90)] pt-6 pb-[50px] px-11 rounded-[15px]">
         <div className="flex items-center gap-6 justify-center">
           <h2 className="text-lg">User Profile</h2>
-          <button className="text-blue-600 flex items-center gap-2 text-sm font-medium">
+          <button onClick={()=>setIsEditable(!isEditable)} className={`${isEditable && "bg-slate-200"} px-3 rounded-md py-2 cursor-pointer text-blue-600 flex items-center gap-2 text-sm font-medium`}>
             Edit <PencilLine size={14} />
           </button>
         </div>
@@ -29,8 +34,8 @@ export default function Activity() {
               </label>
               <input
                 type="email"
-                value="surajit.saha@example.com"
-                readOnly
+                placeholder="surajit.saha@example.com"
+                readOnly={!isEditable}
                 className="w-full border rounded-lg px-4 py-2 text-sm focus:outline-none"
               />
               <span className="text-xs text-gray-500 absolute -bottom-5 left-0 pl-4 pb-1">
@@ -45,8 +50,8 @@ export default function Activity() {
               </label>
               <input
                 type="text"
-                value="+91 9456XXXXXX"
-                readOnly
+                placeholder="(+91) 9456XXXXXX"
+                readOnly={!isEditable}
                 className="w-full border rounded-lg px-4 py-2 text-sm focus:outline-none"
               />
               <span className="text-xs text-gray-500 absolute -bottom-5 left-0 pl-4 pb-1">
@@ -61,8 +66,8 @@ export default function Activity() {
               </label>
               <input
                 type="text"
-                value="Example Institute of Technology"
-                readOnly
+                placeholder="Example Institute of Technology"
+                readOnly={!isEditable}
                 className="w-full border rounded-lg px-4 py-2 text-sm focus:outline-none"
               />
               <span className="text-xs text-gray-500 absolute -bottom-5 left-0 pl-4 pb-1">
@@ -77,8 +82,8 @@ export default function Activity() {
               </label>
               <input
                 type="text"
-                value="India"
-                readOnly
+                placeholder="City, State"
+                readOnly={!isEditable}
                 className="w-full border rounded-lg px-4 py-2 text-sm focus:outline-none"
               />
               <span className="text-xs text-gray-500 absolute -bottom-5 left-0 pl-4 pb-1">
