@@ -61,17 +61,19 @@ export default function Page() {
       </div>
 
       {/* Content Section */}
-      <Link href={"/"} className="w-full flex flex-col items-center justify-center gap-8 mt-10">
+      <div className="w-full flex flex-col items-center justify-center gap-8 mt-10">
         <ReferCard data={accordionData} />
         <ReferCard data={accordionData} />
-        <Image
-          src={"/images/refer.png"}
-          height={500}
-          width={500}
-          alt="logo"
-          className="object-cover md:w-[80%]"
-        />
-      </Link>
+        <Link href={"/"} className="flex items-center justify-center">
+          <Image
+            src={"/images/refer.png"}
+            height={500}
+            width={500}
+            alt="logo"
+            className="object-cover md:w-[80%]"
+          />
+        </Link>
+      </div>
     </div>
   );
 }
